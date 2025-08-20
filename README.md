@@ -1,5 +1,3 @@
-# Cyber-Security-Automation-Project
-Python email security analyzer with VirusTotal &amp; ClamAV integration for phishing detection and threat analysis
 # Cybersecurity Automation Project: Real-Time Email Threat Detection and SIEM Integration
 
 **Prepared by:** [Your Name]  
