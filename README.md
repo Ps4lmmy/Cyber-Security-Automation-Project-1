@@ -2,23 +2,24 @@
 
 ## 📌 Overview
 
-This project automates the **detection and analysis of phishing emails and malicious communications** in real-time. It continuously monitors email inboxes via **IMAP**, extracts key email components, scans embedded links with **VirusTotal**, processes attachments with **ClamAV**, and generates comprehensive reports for security analysis.
+This project automates the **detection and analysis of phishing emails and malicious communications**. It processes stored email files (.eml format), extracts key email components, scans embedded links with VirusTotal, analyzes attachments with ClamAV, and generates comprehensive security reports.
 
-The implementation demonstrates **practical Cybersecurity automation**, providing a scalable defense workflow that reduces manual effort and improves incident response capabilities.
+The implementation demonstrates **practical Cybersecurity automation**, providing a scalable analysis workflow that significantly reduces manual effort in email threat investigation while improving incident response capabilities through structured, automated analysis of suspicious emails.
 
 ---
 
 ## ⚙️ Automated Workflow Breakdown
 
 ### Phase 1 -- Email Collection & Monitoring
-- Continuously monitors email folders via IMAP
-- Tracks unique email UIDs to avoid duplicate analysis
-- Supports multiple email providers with IMAP access
+- Processes existing email files in .eml format from local storage
+- Supports batch analysis of multiple email files in a directory
+- Maintains file integrity throughout the analysis process
 
 ### Phase 2 -- Email Parsing & Structuring
-- Extracts headers, sender, recipient, subject, and body content
+- Extracts headers, sender, recipient, subject, and body content from .eml files
 - Decodes MIME-encoded headers and attachments
 - Handles both multipart and plaintext email formats
+- Preserves original email structure and metadata
 
 ### Phase 3 -- Comprehensive Threat Analysis
 - **URL Extraction & Scanning**
@@ -35,24 +36,29 @@ The implementation demonstrates **practical Cybersecurity automation**, providin
 - **Header Analysis**
   - Detects email spoofing attempts through Return-Path and Reply-To verification
   - Identifies header inconsistencies that indicate potential phishing
+  - Analyzes email authentication headers for suspicious patterns
 
 ### Phase 4 -- Reporting & Output
 - Generates comprehensive CSV reports with detailed scan results
 - Provides clear verdicts (MALICIOUS/SUSPICIOUS/CLEAN/UNKNOWN) for each element
 - Supports both individual file and bulk directory processing
+- Creates structured output for integration with security workflows
+- Includes timestamps and analysis metadata for audit purposes
 
 ---
 
 ## 🔑 Core Features Implemented
 
 - ✅ Email parsing with Python's email library
-- ✅ IMAP integration for mailbox monitoring
+- ✅ Local .eml file processing (batch and individual file support)
 - ✅ URL extraction and VirusTotal API scanning
 - ✅ Attachment analysis with SHA-256 hashing
 - ✅ Dual-layer malware detection (VirusTotal + ClamAV)
 - ✅ Header spoofing detection
 - ✅ Comprehensive CSV reporting
 - ✅ Secure secrets management with `.env` (via `python-dotenv`)
+- ✅ Multi-format email handling (MIME decoding for headers and attachments)
+- ✅ Structured data output for security analysis workflows
 
 ---
 
@@ -63,7 +69,6 @@ The implementation demonstrates **practical Cybersecurity automation**, providin
 - **ClamAV** (local antivirus scanning)
 - **Pandas** (data processing and report generation)
 - **python-dotenv** (secure credential management)
-- **IMAP protocol** (email retrieval)
 
 ---
 
@@ -134,23 +139,23 @@ Example report structure:
 
 ## 🔮 Future Enhancements
 
-- **SIEM Integration**: Direct forwarding of events to Splunk HTTP Event Collector (HEC)
-- **Advanced ML Detection**: Machine learning models for phishing content identification
-- **Expanded Threat Intelligence**: Integration with additional threat feeds
-- **Dashboard Interface**: Web-based dashboard for visualization and management
-- **Automated Response**: Integration with SOAR platforms for automated remediation
+- Enable **live IMAP scanning** for continuous monitoring.
+- **SIEM Integration**: Direct forwarding of events to Splunk HTTP Event Collector (HEC).
+- **Advanced ML Detection**: Machine learning models for phishing content identification.
+- **Expanded Threat Intelligence**: Integration with additional threat feeds.
+- **Dashboard Interface**: Web-based dashboard for visualization and management.
+- **Automated Response**: Integration with SOAR platforms for automated remediation.
 
 ---
 
 ## ✅ Conclusion
 
-This project demonstrates how **strategic automation enhances phishing detection capabilities** by integrating multiple analysis techniques into a cohesive workflow. The solution successfully combines:
+This project demonstrates how strategic automation enhances phishing analysis capabilities by integrating multiple investigation techniques into a cohesive workflow. The solution successfully combines:
 
-- Continuous email monitoring
-- Multi-layered threat intelligence (VirusTotal + ClamAV)
-- Comprehensive analysis of URLs, attachments, and headers
-- Structured reporting for security operations
+- Batch email analysis of stored .eml files
+- Multi-layered threat intelligence (VirusTotal + ClamAV integration)
+- Comprehensive forensic analysis of URLs, attachments, and headers
+- Structured reporting for security documentation and review
 
-The framework reduces manual analysis workload, accelerates incident response times, and provides a scalable foundation for organizational email security. The modular architecture allows for easy expansion and integration with additional security tools and platforms.
-
+The framework significantly reduces manual analysis workload, accelerates email threat investigation, and provides a scalable foundation for organizational email security processes. The modular architecture allows for easy expansion and integration with additional security tools and platforms for enhanced forensic capabilities.
 ---
