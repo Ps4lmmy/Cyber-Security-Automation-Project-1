@@ -158,4 +158,5 @@ This project demonstrates how strategic automation enhances phishing analysis ca
 - Structured reporting for security documentation and review
 
 The framework significantly reduces manual analysis workload, accelerates email threat investigation, and provides a scalable foundation for organizational email security processes. The modular architecture allows for easy expansion and integration with additional security tools and platforms for enhanced forensic capabilities.
+
 ---
