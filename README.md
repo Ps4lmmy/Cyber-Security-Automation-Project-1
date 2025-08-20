@@ -77,12 +77,15 @@ The implementation demonstrates **practical Cybersecurity automation**, providin
 
 2. **Create and activate virtual environment**:
    ```bash
-   python -m venv .venv   source .venv/bin/activate
+   python -m venv .venv   
+   source .venv/bin/activate
    ```
 
 3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
+   pip install pandas
+   pip install python-dotenv
    ```
 
 4. **Install and configure ClamAV**:
