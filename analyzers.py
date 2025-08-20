@@ -59,28 +59,21 @@ def scan_file_clamav(file_content, filename):
     Scan a file using local ClamAV daemon
     """
     try:
-        # Connect to ClamAV daemon
         cd = ClamdUnixSocket()
         
-        # Test connection first
         if not cd.ping():
             return {"status": "ERROR", "message": "ClamAV daemon not responding"}
         
-        # Create temporary file with proper permissions
         with tempfile.NamedTemporaryFile(delete=False, suffix=filename, mode='wb') as tmp:
             tmp.write(file_content)
             tmp_path = tmp.name
         
-        # Set readable permissions for clamav user
         os.chmod(tmp_path, 0o644)
         
-        # Perform the scan
         scan_result = cd.scan_file(tmp_path)
         
-        # Clean up
         os.unlink(tmp_path)
         
-        # Parse result
         if scan_result is None:
             return {"status": "CLEAN", "message": "No threats detected"}
         else:
@@ -91,7 +84,6 @@ def scan_file_clamav(file_content, filename):
                 return {"status": "ERROR", "message": result[1]}
                 
     except Exception as e:
-        # Clean up temp file if it still exists
         if 'tmp_path' in locals() and os.path.exists(tmp_path):
             os.unlink(tmp_path)
         return {"status": "ERROR", "message": str(e)}
