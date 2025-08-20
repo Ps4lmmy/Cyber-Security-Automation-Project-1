@@ -1,4 +1,4 @@
-# Cybersecurity Automation Project: Real-Time Email Threat Detection and SIEM Integration
+# Cybersecurity Automation Project: Phishing Email Analysis
 
 ## 📌 Overview
 
