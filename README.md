@@ -1,10 +1,5 @@
 # Cybersecurity Automation Project: Real-Time Email Threat Detection and SIEM Integration
 
-**Prepared by:** [Your Name]  
-**Date:** [Current Date]
-
----
-
 ## 📌 Overview
 
 This project automates the **detection and analysis of phishing emails and malicious communications** in real-time. It continuously monitors email inboxes via **IMAP**, extracts key email components, scans embedded links with **VirusTotal**, processes attachments with **ClamAV**, and generates comprehensive reports for security analysis.
@@ -82,8 +77,7 @@ The implementation demonstrates **practical Cybersecurity automation**, providin
 
 2. **Create and activate virtual environment**:
    ```bash
-   python -m venv venv
-   source venv/bin/activate
+   python -m venv .venv   source .venv/bin/activate
    ```
 
 3. **Install dependencies**:
@@ -157,17 +151,3 @@ This project demonstrates how **strategic automation enhances phishing detection
 The framework reduces manual analysis workload, accelerates incident response times, and provides a scalable foundation for organizational email security. The modular architecture allows for easy expansion and integration with additional security tools and platforms.
 
 ---
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome. Feel free to check issues page if you want to contribute.
-
-## 📧 Contact
-
-Your Name - [Your Email]
-
-Project Link: [https://github.com/Ps4lmmy/Cyber-Security-Automation-Project](https://github.com/Ps4lmmy/Cyber-Security-Automation-Project)
