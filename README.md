@@ -89,8 +89,6 @@ The implementation demonstrates **practical Cybersecurity automation**, providin
 3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
-   pip install pandas
-   pip install python-dotenv
    ```
 
 4. **Install and configure ClamAV**:
